@@ -18,10 +18,16 @@ Warning
 Use some sort of looping. Do Not use String.prototype.replace
 */
 
-const urlEncode = function(text) {
+const urlEncode = function(text) 
+{
     // Put your solution here
+
+    const check = /\s+/g;
+    return text.replace(check, '%20');
+
   };
   
   console.log(urlEncode("cornerstone college")); //cornerstone%20college
   console.log(urlEncode(" cornerstone college ")); //cornerstone%20college
   console.log(urlEncode("blue is greener than purple for sure")); //blue%20is%20greener%20than%20purple%20for%20sure
+  console.log(urlEncode("  This_can be_tricky.  but   useful ")); 

@@ -8,8 +8,23 @@ Create a function named organizeInstructors that will receive an array of instru
 } 
 */
 
-const organizeInstructors = function(instructors) {
+const organizeInstructors = function(instructors) 
+{
   // Put your solution here
+  let organize = {};
+  instructors.forEach(i => 
+    {
+    if(!organize[i.course])
+      {
+        organize[i.course] = []; 
+        organize[i.course].push(i.name);
+      } else 
+      {
+      organize[i.course].push(i.name);
+      }
+
+    })
+  return organize;
 };
 
 console.log(organizeInstructors([
@@ -18,6 +33,7 @@ console.log(organizeInstructors([
   {name: "Karim", course: "Web"},
   {name: "Donald", course: "Web"}
 ])); // { iOS: ["Samuel"], Web: ["Victoria", "Karim", "Donald"]}
+
 console.log(organizeInstructors([
   {name: "Brendan", course: "Blockchain"},
   {name: "David", course: "Web"},

@@ -7,10 +7,18 @@ Create a function named numberOfVowels that will receive a string and return the
 
 */
 
-const numberOfVowels = function(data) {
+const numberOfVowels = function(data) 
+{
     // Put your solution here
+
+    let index = 'aeiou';
+    let counter = 0;
+    for(let i = 0; i < data.length; i++){
+      if(index.indexOf(data[i]) >= 0) counter++;
+    }
+    return counter;
   };
   
-  console.log(numberOfVowels("orange")); // 3
-  console.log(numberOfVowels("cornerstone college")); // 7
+  console.log(numberOfVowels("omar")); // 3
+  console.log(numberOfVowels("Vancouver Rocks")); // 7
   console.log(numberOfVowels("aeiou")); // 5
